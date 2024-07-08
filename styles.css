@@ -301,7 +301,7 @@ header ul.active {
 }
 
 .receta-card h3 {
-    background: var(--color-primary);
+    background: #377B30;
     color: white;
     padding: 10px;
     font-size: 1.2rem;
@@ -320,7 +320,7 @@ header ul.active {
     display: inline-block;
     margin: 10px auto;
     padding: 10px 20px;
-    background-color: var(--color-primary);
+    background-color: #377B30;
     color: white;
     border-radius: 25px;
     text-decoration: none;
@@ -330,7 +330,7 @@ header ul.active {
 }
 
 .btn-ver-receta:hover {
-    background-color: #1565C0;
+    background-color: #377B30;
     transform: translateY(-3px);
 }
 
@@ -547,9 +547,15 @@ footer .social-links a:hover {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    width: 250px;
+    width: calc(33.33% - 20px);
+    min-width: 250px;
     text-align: center;
     position: relative;
+    transition: transform 0.3s ease;
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
 }
 
 .valor-card i {
@@ -565,13 +571,27 @@ footer .social-links a:hover {
 
 .valor-card:nth-child(1),
 .valor-card:nth-child(3) {
-    background-color: #e0f7fa;
-    color: #00796b;
+    background-color: #1976D2; /* Color azul del header */
+    color: #ffffff; /* Texto blanco */
 }
 
 .valor-card:nth-child(1) i,
-.valor-card:nth-child(3) i {
-    color: #00796b;
+.valor-card:nth-child(3) i,
+.valor-card:nth-child(1) h3,
+.valor-card:nth-child(3) h3 {
+    color: #ffffff; /* Iconos y texto en blanco para el primer y tercer elemento */
 }
 
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .valor-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .valor-card {
+        width: 100%;
+    }
+}
 }
