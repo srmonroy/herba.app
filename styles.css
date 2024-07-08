@@ -280,7 +280,7 @@ header ul.active {
 }
 
 .receta-card {
-    border: 1px solid var(--color-secondary);
+    border: 1px solid #333;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
