@@ -268,7 +268,7 @@ header ul.active {
 
 #recetas-destacadas h2 {
     font-size: 2rem;
-    color: var(--color-primary);
+    color: #377B30;
     text-align: center;
     margin-bottom: 20px;
 }
