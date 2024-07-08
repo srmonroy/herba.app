@@ -1,0 +1,526 @@
+/* Variables CSS */
+:root {
+    --color-primary: #1976D2;
+    --color-secondary: #64B5F6;
+    --color-background: #FFFFFF;
+    --color-text: #455A64;
+    --border-radius: 25px;
+    --transition-speed: 0.3s;
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+header {
+    background: rgba(25, 118, 210, 0.8); /* Color base con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header.scrolled {
+    padding: 10px 0;
+    background: rgba(25, 118, 210, 0.95); /* Más opaco al hacer scroll */
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header .logo a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #FFF, #64B5F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+header .logo a:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 30px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+header ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFF;
+}
+
+/* Estilo para el enlace activo */
+header ul li a.active {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+/* Animación para el menú móvil */
+@media (max-width: 768px) {
+    header .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    header ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(25, 118, 210, 0.95);
+        padding: 20px 0;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    header ul.active {
+        display: flex;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    header ul li a {
+        display: block;
+        padding: 10px 20px;
+    }
+}
+
+/* Animación de aparición para el menú en dispositivos móviles */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header ul.active {
+    animation: slideDown 0.3s ease forwards;
+}
+
+/* Hero Section */
+#hero {
+    background: url('https://via.placeholder.com/1200x500') no-repeat center center/cover;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+#hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: slide-up 1s ease-out;
+}
+
+#hero .tagline {
+    font-size: 1.2rem;
+    animation: slide-up 1s ease-out 0.3s;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* About Section */
+#about {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Search Section */
+#busqueda {
+    margin: 50px 0;
+    position: relative;
+}
+
+#busqueda .search-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+#busqueda .search-shape {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    z-index: 0;
+    animation: move 6s linear infinite;
+}
+
+@keyframes move {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 30px); }
+}
+
+#busqueda h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+#busqueda input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#busqueda button {
+    width: auto;
+    padding: 8px 15px;
+    border: none;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Featured Recipes Section */
+#recetas-destacadas {
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background-color: var(--color-background);
+}
+
+#recetas-destacadas h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#recetas-destacadas .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.receta-card {
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.receta-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.receta-card img {
+    width: 100%;
+    height: auto;
+}
+
+.receta-card h3 {
+    background: var(--color-primary);
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.receta-card p {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Button styles */
+.btn-ver-receta {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    text-align: center;
+}
+
+.btn-ver-receta:hover {
+    background-color: #1565C0;
+    transform: translateY(-3px);
+}
+
+/* Call to Action */
+#cta {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    padding: 50px 20px;
+    border-radius: var(--border-radius);
+    margin: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#cta::before,
+#cta::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 0;
+    animation: move 6s linear infinite;
+}
+
+#cta::after {
+    bottom: -50px;
+    right: -50px;
+    animation-direction: reverse;
+}
+
+#cta h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #E1F5FE;
+}
+
+#cta p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #E1F5FE;
+}
+
+#cta .btn {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    color: var(--color-primary);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+#cta .btn:hover {
+    background: #1565C0;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color var(--transition-speed);
+}
+
+footer .social-links a:hover {
+    color: var(--color-secondary);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header .menu-toggle {
+        display: block;
+    }
+
+    header ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--color-primary);
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    header ul.active {
+        display: flex;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero .tagline {
+        font-size: 1rem;
+    }
+
+    #about, #busqueda, #recetas-destacadas, #cta {
+        padding: 20px;
+    }
+
+    #busqueda .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #busqueda input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #busqueda button {
+        width: auto;
+        padding: 8px 15px;
+    }
+
+    .receta-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+/* About Me Section */
+#sobre-mi {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#sobre-mi h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+#sobre-mi .bio {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#sobre-mi .bio img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+#sobre-mi .bio p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+}
