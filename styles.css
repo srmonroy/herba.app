@@ -151,7 +151,7 @@ header ul.active {
 
 /* Hero Section */
 #hero {
-    background: url('images\vegetales.jpeg') no-repeat center center/cover;
+    background: img('images\vegetales.jpeg') no-repeat center center/cover;
     color: white;
     padding: 180px 0; /* Aumentado de 120px a 150px */
     text-align: center;
