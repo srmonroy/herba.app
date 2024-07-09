@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    background: rgba(25, 118, 210, 0.8);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     backdrop-filter: blur(10px);
     color: white;
     padding: 10px 0;
@@ -385,7 +385,7 @@ header ul li a.active {
 }
 
 footer {
-    background: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     color: white;
     text-align: center;
     padding: 20px 0;
