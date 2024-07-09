@@ -208,6 +208,7 @@ header ul li a.active {
 }
 
 #about {
+    position: relative;
     max-width: 1200px;
     margin: 50px auto;
     padding: 30px;
@@ -218,63 +219,28 @@ header ul li a.active {
     animation: fade-in 1s ease-out;
 }
 
-@keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-#busqueda {
-    margin: 50px 0;
-    position: relative;
-}
-
-#busqueda .search-container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-}
-
-#busqueda .search-shape {
+.about-image {
     position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 200px;
-    height: 200px;
-    background: var(--color-primary);
+    bottom: -60px;  /* Ajusta este valor según necesites */
+    right: 20px;    /* Ajusta este valor según necesites */
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    z-index: 0;
-    animation: move 6s linear infinite;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 3px solid white;
+    transition: transform 0.3s ease;
+    z-index: 1;  /* Asegura que la imagen esté sobre el div */
 }
 
-@keyframes move {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(30px, 30px); }
-}
-
-#busqueda h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-bottom: 20px;
-}
-
-#busqueda input {
+.about-image img {
     width: 100%;
-    padding: 10px;
-    border: 2px solid var(--color-primary);
-    border-radius: 5px;
-    margin-bottom: 10px;
+    height: 100%;
+    object-fit: cover;
 }
 
-#busqueda button {
-    width: auto;
-    padding: 8px 15px;
-    border: none;
-    background: var(--color-primary);
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+.about-image:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 #recetas-destacadas {
