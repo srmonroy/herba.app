@@ -1,7 +1,7 @@
 /* Variables CSS */
 :root {
     --color-primary: #1976D2;
-    --color-secondary: #64B5F6;
+    --color-secondary: #377B30;
     --color-background: #FFFFFF;
     --color-text: #455A64;
     --border-radius: 25px;
@@ -23,10 +23,10 @@ body {
 }
 
 header {
-    background: rgba(25, 118, 210, 0.8); /* Color base con transparencia */
-    backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+    background: rgba(25, 118, 210, 0.8);
+    backdrop-filter: blur(10px);
     color: white;
-    padding: 15px 0;
+    padding: 10px 0; /* Reducido de 15px a 10px */
     position: fixed;
     width: 100%;
     top: 0;
@@ -36,8 +36,8 @@ header {
 }
 
 header.scrolled {
-    padding: 10px 0;
-    background: rgba(25, 118, 210, 0.95); /* Más opaco al hacer scroll */
+    padding: 5px 0; /* Reducido de 10px a 5px */
+    background: rgba(25, 118, 210, 0.95);
 }
 
 header nav {
@@ -53,7 +53,7 @@ header .logo a {
     color: white;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Reducido de 1.8rem a 1.5rem */
     letter-spacing: 1px;
     text-transform: uppercase;
     background: linear-gradient(45deg, #FFF, #64B5F6);
@@ -72,18 +72,19 @@ header ul {
 }
 
 header ul li {
-    margin-left: 30px;
+    margin-left: 20px; /* Reducido de 30px a 20px */
 }
 
 header ul li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Reducido de 1.1rem a 1rem */
     transition: all 0.3s ease;
     padding: 5px 10px;
     border-radius: 20px;
 }
+
 
 header ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
@@ -150,9 +151,9 @@ header ul.active {
 
 /* Hero Section */
 #hero {
-    background: url('https://via.placeholder.com/1200x500') no-repeat center center/cover;
+    background: url('images\vegetales.jpeg') no-repeat center center/cover;
     color: white;
-    padding: 120px 0;
+    padding: 180px 0; /* Aumentado de 120px a 150px */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -162,17 +163,23 @@ header ul.active {
 #hero-content {
     position: relative;
     z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 #hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 4rem; /* Aumentado de 2.5rem a 4rem */
+    margin-bottom: 20px; /* Aumentado de 10px a 20px */
     animation: slide-up 1s ease-out;
+    line-height: 1.2;
 }
 
 #hero .tagline {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Aumentado de 1.2rem a 1.5rem */
     animation: slide-up 1s ease-out 0.3s;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 @keyframes slide-up {
@@ -186,6 +193,30 @@ header ul.active {
     }
 }
 
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 3rem;
+    }
+    
+    #hero .tagline {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    #hero .tagline {
+        font-size: 1rem;
+    }
+    
+    #hero {
+        padding: 100px 0;
+    }
+}
 /* About Section */
 #about {
     max-width: 1200px;
@@ -592,6 +623,82 @@ footer .social-links a:hover {
 @media (max-width: 480px) {
     .valor-card {
         width: 100%;
+    }
+}
+#testimonios {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+#testimonios h2 {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.testimonio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.testimonio figure {
+    display: flex;
+    align-items: center;
+}
+
+.testimonio img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonio figcaption {
+    flex: 1;
+}
+
+.testimonio blockquote {
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.testimonio cite {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 1rem;
+    display: block;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .testimonio {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .testimonio img {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }
 }
